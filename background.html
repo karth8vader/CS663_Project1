@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <title>Background | Sign Language Tutorial</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <!-- Bootstrap CSS -->
+        <!-- Bootstrap -->
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
             rel="stylesheet"
@@ -12,34 +12,69 @@
         <style>
             body {
                 font-family: Arial, sans-serif;
-                line-height: 1.6;
+                line-height: 1.7;
             }
             .navbar {
                 margin-bottom: 20px;
             }
             .content {
-                max-width: 900px;
+                max-width: 1000px;
                 margin: auto;
                 padding: 20px;
             }
             .image-block {
-                margin: 20px 0;
+                margin: 22px 0;
                 text-align: center;
             }
             .image-block img {
                 max-width: 100%;
                 border-radius: 8px;
             }
+            .caption {
+                font-size: 0.95rem;
+                color: #666;
+                margin-top: 6px;
+            }
             .highlight {
                 background: #fff4e5;
-                padding: 15px;
-                border-left: 5px solid #fd7e14;
-                margin: 20px 0;
+                padding: 16px;
+                border-left: 6px solid #fd7e14;
+                border-radius: 8px;
+            }
+            blockquote {
+                border-left: 4px solid #0d6efd;
+                padding-left: 12px;
+                color: #333;
+                font-style: italic;
+                background: #f7fbff;
+            }
+            .reflink {
+                font-size: 0.9rem;
+            }
+            .callout {
+                background: #eef7ff;
+                border-left: 6px solid #0d6efd;
+                padding: 16px;
+                border-radius: 10px;
+            }
+            .tbl-note {
+                font-size: 0.92rem;
+                color: #666;
+            }
+            .grid-2 {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+            @media (min-width: 900px) {
+                .grid-2 {
+                    grid-template-columns: 1fr 1fr;
+                }
             }
         </style>
     </head>
     <body>
-        <!-- Navigation -->
+        <!-- Nav -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.html"
@@ -78,54 +113,238 @@
             </div>
         </nav>
 
-        <!-- Page Content -->
+        <!-- Content -->
         <div class="content">
-            <h1 class="text-center">Literature Review & Background</h1>
-
+            <h1 class="text-center">Background & Literature</h1>
             <p>
-                Research into sign language recognition has grown significantly
-                in recent years. Advances in
-                <strong>computer vision</strong> and
-                <strong>machine learning</strong> have led to tools capable of
-                recognizing hand gestures with increasing accuracy. Some of
-                these systems have been applied in education, offering
-                interactive platforms for learners.
+                Computer vision for sign-language learning sits at the
+                intersection of <b>child-computer interaction</b> and
+                <b>real-time gesture recognition</b>. This section summarizes
+                recent research on <em>who</em> we design for (children and
+                classrooms), and <em>how</em> systems are built (datasets,
+                pipelines, models).
             </p>
 
-            <p>
-                Despite this progress, most existing tools are designed for
-                general audiences or adult learners. Few systems directly target
-                <strong>children</strong>, who may require simplified
-                interfaces, gamified learning, and more accessible feedback
-                mechanisms. These gaps highlight the need for child-focused
-                solutions that integrate both educational psychology and
-                technical robustness.
-            </p>
+            <!-- Pull-quote (Rahman et al.) -->
+            <blockquote>
+                “Results indicate high engagement and superior learning
+                outcomes… with a preference for collaborative and
+                teacher-instructed activities.”
+                <span class="reflink">[Rahman et al., 2024]</span>
+            </blockquote>
 
-            <!-- Example Image -->
-            <div class="image-block">
-                <img
-                    src="images/cv_pipeline_diagram.png"
-                    alt="Computer vision pipeline for sign language learning"
-                />
-                <p class="text-muted">
-                    Figure 3: Example pipeline for sign language recognition
-                    using computer vision.
-                </p>
+            <div class="callout mb-3">
+                <strong>Two complementary lenses we use:</strong>
+                <ol class="mb-0">
+                    <li>
+                        <em>Pedagogy & UX for kids</em> — What motivates early
+                        learners and how should lessons be delivered?
+                        (cross-country study)
+                    </li>
+                    <li>
+                        <em>Vision & ML pipelines</em> — What data and model
+                        choices enable responsive, accurate feedback? (real-time
+                        ASL system)
+                    </li>
+                </ol>
             </div>
 
-            <!-- Highlight Box -->
-            <div class="highlight">
-                <h4>Research Gaps</h4>
+            <!-- Figures row -->
+            <section class="mt-4">
+                <div class="grid-2">
+                    <div>
+                        <div class="image-block">
+                            <img
+                                src="images/rahman_fig9_preferences.jpg"
+                                alt="Preferences towards group vs individual and learning modalities (Rahman et al.)"
+                            />
+                            <div class="caption">
+                                Figure A. Learning preferences of Finnish
+                                participants: stronger tilt toward
+                                <em>group activities</em> and
+                                <em>auditory</em> instruction. From Rahman et
+                                al. (Fig. 9).
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="image-block">
+                            <img
+                                src="images/cabana_fig2_pipeline.png"
+                                alt="ASL recognition and translation pipeline (Cabana)"
+                            />
+                            <div class="caption">
+                                Figure B. Real-time ASL learning pipeline
+                                (camera → model → on-screen feedback), adapted
+                                from Cabana (Fig. 2).
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Rahman et al. detail -->
+            <section class="mt-4">
+                <h2>What the Classroom Study Tells Us</h2>
+                <p>
+                    Rahman et al. designed and tested a web-based sign-language
+                    platform with
+                    <b>28 children (ages 6-7) in Finland and India</b>,
+                    combining lessons, practice modules, and a learning-style
+                    survey (PLSPQ).
+                </p>
+
+                <div class="grid-2">
+                    <div>
+                        <div class="image-block">
+                            <img
+                                src="images/rahman_fig8_reattempts.jpg"
+                                alt="Bar chart of re-attempts in Greetings module (Rahman et al.)"
+                            />
+                            <div class="caption">
+                                Figure C. Re-attempts in the “Greetings” module
+                                (participant-wise re-tries), suggesting
+                                sustained engagement and self-correction. From
+                                Rahman et al. (Fig. 8).
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="image-block">
+                            <img
+                                src="images/rahman_table2_plspq.png"
+                                alt="Table summary of PLSPQ modalities (Rahman et al.)"
+                            />
+                            <div class="caption">
+                                Figure D. PLSPQ summary: strong preference for
+                                <em>auditory</em> instruction and noticeable
+                                favor for <em>group</em> activities (Table 2).
+                            </div>
+                        </div>
+                        <p class="tbl-note">
+                            Design implication: pair CV feedback with
+                            <b>spoken prompts</b> and <b>collaborative tasks</b>
+                            (teacher-instructed small groups).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Short quote -->
+                <blockquote>
+                    “Structured guidance from teachers can optimize the use of
+                    technology-assisted learning platforms for children.”
+                    <span class="reflink"
+                        >[Rahman et al., Design Implications]</span
+                    >
+                </blockquote>
+            </section>
+
+            <!-- Cabana (arXiv) detail -->
+            <section class="mt-4">
+                <h2>What the Real-Time System Tells Us</h2>
+                <p>
+                    Cabana proposes a practical recipe for
+                    <b>real-time ASL learning</b>: build a robust
+                    <b>alphabet dataset</b>, benchmark several
+                    <b>CNN families</b>, then deploy the best model in a
+                    lightweight OpenCV loop for on-screen feedback.
+                </p>
+
+                <div class="grid-2">
+                    <div>
+                        <div class="image-block">
+                            <img
+                                src="images/cabana_fig1_samplesize.png"
+                                alt="Dataset sample size per ASL letter (Cabana)"
+                            />
+                            <div class="caption">
+                                Figure E. Dataset composition by ASL letter
+                                (static alphabet; dynamic J and Z excluded).
+                                Adapted from Cabana (Fig. 1).
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="image-block">
+                            <img
+                                src="images/cabana_model_families.png"
+                                alt="CNN family comparison (Cabana)"
+                            />
+                            <div class="caption">
+                                Figure F. Conceptual comparison of CNN families
+                                explored Summarized from Section 4.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Short quote -->
+                <blockquote>
+                    “We studied several neural network classification models and
+                    implemented the one with the best performance metrics.”
+                    <span class="reflink">[Cabana, 2024]</span>
+                </blockquote>
+
+                <p class="mt-2">
+                    Takeaway for this tutorial: begin with
+                    <b>static signs</b> (alphabet, numbers) using keypoints or
+                    image crops; once accuracy/latency are solid, graduate to
+                    <b>dynamic signs</b>
+                    with temporal models.
+                </p>
+            </section>
+
+            <!-- Synthesis -->
+            <section class="mt-4">
+                <h2>Synthesis: From Findings to Design</h2>
                 <ul>
                     <li>
-                        Lack of tools specifically designed for
-                        <strong>children</strong>.
+                        <strong>Content & pacing:</strong> short modules with
+                        immediate feedback encourage re-attempts and
+                        self-correction.
                     </li>
-                    <li>Limited interactivity in existing platforms.</li>
-                    <li>Challenges with usability and real-time feedback.</li>
+                    <li>
+                        <strong>Modality pairing:</strong> combine on-screen
+                        visuals with simple audio prompts (aligns with auditory
+                        preferences).
+                    </li>
+                    <li>
+                        <strong>Social setting:</strong> favor small-group
+                        practice with teacher facilitation for early learners.
+                    </li>
+                    <li>
+                        <strong>CV architecture:</strong> start with an alphabet
+                        dataset; compare compact CNNs for real-time feedback.
+                    </li>
                 </ul>
-            </div>
+            </section>
+
+            <!-- Licenses / how to download figures -->
+            <section class="mt-4 highlight">
+                <h5 class="mb-2">Using the Figures (Licensing Notes)</h5>
+                <p class="mb-1">
+                    Rahman et al. paper is CC BY 4.0 in the University of Oulu
+                    repository—cite the paper and include a credit line under
+                    each reused figure.
+                </p>
+                <p class="mb-0">
+                    Cabana’s arXiv HTML indicates CC BY-NC-SA 4.0—credit and
+                    <em>avoid commercial use</em>. Re-draw simple versions if
+                    needed for clarity in class.
+                </p>
+            </section>
+
+            <!-- Audio Narration -->
+            <section class="mt-5">
+                <h3>Audio Narration</h3>
+                <audio controls>
+                    <source
+                        src="audio/background-narration.mp3"
+                        type="audio/mpeg"
+                    />
+                    Your browser does not support the audio element.
+                </audio>
+            </section>
         </div>
 
         <!-- Footer -->
