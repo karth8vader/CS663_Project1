@@ -4,7 +4,6 @@
         <meta charset="UTF-8" />
         <title>Applications & Impact | Sign Language Tutorial</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <!-- Bootstrap -->
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
             rel="stylesheet"
@@ -28,20 +27,13 @@
             }
             .image-block img {
                 max-width: 100%;
-                border-radius: 8px;
+                border-radius: 12px;
             }
             .callout {
                 background: #eef7ff;
                 border-left: 6px solid #0d6efd;
                 padding: 16px;
-                margin: 20px 0;
-            }
-            .card-icon {
-                font-size: 32px;
-            }
-            .small-muted {
-                font-size: 0.95rem;
-                color: #666;
+                border-radius: 12px;
             }
             .checklist li {
                 margin-bottom: 0.4rem;
@@ -49,7 +41,7 @@
             .quiz {
                 background: #fff9e6;
                 padding: 16px;
-                border-radius: 10px;
+                border-radius: 12px;
                 border-left: 6px solid #ffc107;
             }
             .answer {
@@ -63,24 +55,12 @@
         </style>
     </head>
     <body>
-        <!-- Nav -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.html"
                     >Sign Language Tutorial</a
                 >
-                <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#nav"
-                    aria-controls="nav"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                >
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="nav">
+                <div class="collapse navbar-collapse">
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="intro.html"
@@ -113,47 +93,39 @@
             </div>
         </nav>
 
-        <!-- Content -->
         <div class="content">
             <h1 class="text-center">Applications & Real-World Impact</h1>
-            <p class="text-center small-muted">
-                Where and how computer vision–based sign language learning tools
-                can be used effectively.
+            <p class="text-center text-muted">
+                Where and how a CV-based sign-language tool can be deployed
+                responsibly and effectively.
             </p>
 
-            <!-- Hero Image -->
+            <!-- Hero (generated) -->
             <div class="image-block">
                 <img
-                    src="images/applications_hero.jpg"
-                    alt="Students using a sign language learning station in a classroom"
+                    src="images/applications_hero_gen.png"
+                    alt="Students gathered at a classroom computer station practicing signs with on-screen feedback"
                 />
                 <p class="text-muted">
-                    Figure: Example deployment in a classroom computer station
-                    (illustrative).
+                    Illustrative, generated image: classroom station with
+                    on-screen hand tracking and child-friendly feedback.
                 </p>
             </div>
 
-            <!-- Overview -->
             <section class="mt-3">
                 <h2>Why Applications Matter</h2>
                 <p>
-                    Translating algorithms into real-world learning requires
-                    thoughtful deployment, usable interfaces for children, and
-                    environments that are inclusive, private, and safe. This
-                    section maps the technology to the settings in which kids
-                    learn and communicate, outlining the opportunities and
-                    trade-offs of each scenario.
+                    Deployment context determines access, equity, privacy, and
+                    day-to-day usability. Below are four common scenarios.
                 </p>
                 <div class="callout">
-                    <strong>Design principle:</strong> Prioritize
-                    <em>low friction</em> (fast, simple),
-                    <em>clear feedback</em> (visual + audio), and
-                    <em>positive reinforcement</em> to sustain
-                    engagement—especially for early learners.
+                    <strong>Design principle:</strong> minimize setup, maximize
+                    immediate feedback, and keep motivation high with playful
+                    rewards.
                 </div>
             </section>
 
-            <!-- Use Cases Grid -->
+            <!-- Use cases grid with generated images -->
             <section class="mt-4">
                 <h2>Key Use Cases</h2>
                 <div class="row g-3">
@@ -162,55 +134,45 @@
                             <div class="card-body">
                                 <h5>Classroom Stations (K–6)</h5>
                                 <p>
-                                    Small groups rotate through a sign-learning
-                                    station. The system guides practice
-                                    (alphabet, numbers, core phrases), gives
-                                    instant feedback, and tracks progress for
-                                    the teacher dashboard.
+                                    Rotations at a shared station; teacher view
+                                    for progress and targeted practice.
                                 </p>
                                 <ul>
-                                    <li>Low-latency webcam setup</li>
+                                    <li>Low-latency webcam, kid-sized UI</li>
+                                    <li>Small-group prompts and badges</li>
                                     <li>
-                                        Teacher dashboard: activity history,
-                                        per-sign accuracy
-                                    </li>
-                                    <li>
-                                        Gamified badges to motivate practice
+                                        Teacher dashboard for accuracy &
+                                        time-on-task
                                     </li>
                                 </ul>
                                 <div class="image-block">
                                     <img
-                                        src="images/classroom_station.jpg"
-                                        alt="Classroom station"
+                                        src="images/classroom_station_gen.png"
+                                        alt="Elementary classroom station with children practicing signs together on one computer"
                                     />
                                 </div>
                             </div>
                         </div>
                     </div>
+
                     <div class="col-md-6">
                         <div class="card h-100">
                             <div class="card-body">
                                 <h5>At-Home Learning</h5>
                                 <p>
-                                    Browser-based experience on laptops or
-                                    tablets. Parents can enable practice
-                                    sessions and view weekly summaries.
+                                    Short browser-based sessions on
+                                    laptops/tablets with simple weekly summaries
+                                    for caregivers.
                                 </p>
                                 <ul>
-                                    <li>
-                                        Works offline or with unreliable
-                                        internet (caching)
-                                    </li>
-                                    <li>Short 5–10 minute sessions</li>
-                                    <li>
-                                        Adaptive difficulty based on accuracy
-                                        &amp; speed
-                                    </li>
+                                    <li>Works offline with caching</li>
+                                    <li>Adaptive difficulty</li>
+                                    <li>5–10 minute practice sets</li>
                                 </ul>
                                 <div class="image-block">
                                     <img
-                                        src="images/home_learning.jpg"
-                                        alt="Home learning"
+                                        src="images/home_learning_gen.png"
+                                        alt="Child at a kitchen table practicing a sign with on-screen stars and encouragement"
                                     />
                                 </div>
                             </div>
@@ -220,30 +182,20 @@
                     <div class="col-md-6">
                         <div class="card h-100">
                             <div class="card-body">
-                                <h5>Speech &amp; Language Therapy</h5>
+                                <h5>Speech & Language Therapy</h5>
                                 <p>
-                                    Therapists introduce signs to support
-                                    communication goals. Progress logs focus on
-                                    motor patterns, sign clarity, and
-                                    consistency.
+                                    Fine-grained feedback on finger posture and
+                                    orientation; exportable session notes.
                                 </p>
                                 <ul>
-                                    <li>
-                                        Fine-grained feedback (finger posture,
-                                        orientation)
-                                    </li>
-                                    <li>
-                                        Session summaries and exportable notes
-                                    </li>
-                                    <li>
-                                        Custom sign sets aligned to therapy
-                                        plans
-                                    </li>
+                                    <li>Custom sign sets per plan</li>
+                                    <li>Detailed posture hints</li>
+                                    <li>Consistent FPS on managed desktops</li>
                                 </ul>
                                 <div class="image-block">
                                     <img
-                                        src="images/therapy_session.jpg"
-                                        alt="Therapy session"
+                                        src="images/therapy_session_gen.png"
+                                        alt="Therapist guiding a child while a monitor shows hand skeleton and posture tips"
                                     />
                                 </div>
                             </div>
@@ -253,27 +205,20 @@
                     <div class="col-md-6">
                         <div class="card h-100">
                             <div class="card-body">
-                                <h5>Public Spaces (Libraries, Museums)</h5>
+                                <h5>Public Kiosks (Libraries/Museums)</h5>
                                 <p>
-                                    Kiosks offer quick, playful lessons for
-                                    visitors. Ideal for awareness campaigns and
-                                    inclusive programming.
+                                    Touch-free quick lessons for awareness and
+                                    inclusion; offline by default for privacy.
                                 </p>
                                 <ul>
-                                    <li>
-                                        Touch-free interactions (gesture-only
-                                        menu)
-                                    </li>
+                                    <li>Gesture-only menus</li>
                                     <li>Looping attract mode with captions</li>
-                                    <li>
-                                        Data collection disabled by default for
-                                        privacy
-                                    </li>
+                                    <li>No data collection by default</li>
                                 </ul>
                                 <div class="image-block">
                                     <img
-                                        src="images/public_kiosk.jpg"
-                                        alt="Public kiosk"
+                                        src="images/public_kiosk_gen.png"
+                                        alt="Library kiosk with large display and a child mirroring a sign shown on the screen"
                                     />
                                 </div>
                             </div>
@@ -282,37 +227,27 @@
                 </div>
             </section>
 
-            <!-- Curriculum & Feedback -->
+            <!-- Curriculum & feedback (generated diagrams/UI) -->
             <section class="mt-5">
-                <h2>Curriculum Mapping & Feedback Design</h2>
-                <p>
-                    Start with static signs (letters, numbers, greetings), then
-                    scaffold to short dynamic phrases. Provide immediate,
-                    multi-modal feedback (visual overlays + simple audio cues)
-                    and celebrate milestones to sustain engagement.
-                </p>
+                <h2>Curriculum Mapping & Feedback</h2>
                 <div class="row g-3">
                     <div class="col-lg-6">
                         <div class="card h-100">
                             <div class="card-body">
                                 <h6>Suggested Progression</h6>
                                 <ol>
-                                    <li>Alphabet &amp; numbers (static)</li>
+                                    <li>Alphabet & numbers (static)</li>
                                     <li>
                                         Core vocabulary (colors, family,
-                                        classroom objects)
+                                        classroom)
                                     </li>
-                                    <li>
-                                        Short dynamic phrases (e.g., greetings)
-                                    </li>
-                                    <li>
-                                        Conversational practice with prompts
-                                    </li>
+                                    <li>Short dynamic phrases</li>
+                                    <li>Conversational prompts</li>
                                 </ol>
                                 <div class="image-block">
                                     <img
-                                        src="images/curriculum_map.png"
-                                        alt="Curriculum map"
+                                        src="images/curriculum_map_gen.png"
+                                        alt="Simple infographic showing a 4-step progression from static alphabet to conversation prompts"
                                     />
                                 </div>
                             </div>
@@ -321,27 +256,16 @@
                     <div class="col-lg-6">
                         <div class="card h-100">
                             <div class="card-body">
-                                <h6>Feedback &amp; Motivation</h6>
+                                <h6>Feedback & Motivation</h6>
                                 <ul>
-                                    <li>
-                                        On-screen hand outlines show target pose
-                                    </li>
-                                    <li>
-                                        Simple scores (✓ / try again) and
-                                        friendly hints
-                                    </li>
-                                    <li>
-                                        Badges for streaks and mastering sets
-                                    </li>
-                                    <li>
-                                        Teacher/parent view of time-on-task
-                                        &amp; accuracy
-                                    </li>
+                                    <li>On-screen hand outline target</li>
+                                    <li>Friendly hints and ✓/try-again</li>
+                                    <li>Badges for streaks & mastery</li>
                                 </ul>
                                 <div class="image-block">
                                     <img
-                                        src="images/feedback_ui.png"
-                                        alt="Feedback UI"
+                                        src="images/feedback_ui_gen.png"
+                                        alt="Mock UI with hand overlay, confidence meter, and celebratory badge"
                                     />
                                 </div>
                             </div>
@@ -350,176 +274,62 @@
                 </div>
             </section>
 
-            <!-- Deployment Options -->
+            <!-- Accessibility & Privacy (generated infographics) -->
             <section class="mt-5">
-                <h2>Deployment Options</h2>
-                <div class="table-responsive">
-                    <table class="table table-bordered comparison">
-                        <thead class="table-light">
-                            <tr>
-                                <th>Option</th>
-                                <th>How it Works</th>
-                                <th>Pros</th>
-                                <th>Cons</th>
-                                <th>Best For</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    In-Browser (TensorFlow.js / WebAssembly)
-                                </td>
-                                <td>
-                                    Model runs locally in the browser; uses
-                                    webcam stream
-                                </td>
-                                <td>
-                                    No installs, privacy (no video upload), easy
-                                    updates
-                                </td>
-                                <td>
-                                    Model size limits, performance varies by
-                                    device
-                                </td>
-                                <td>Classroom carts, home laptops/tablets</td>
-                            </tr>
-                            <tr>
-                                <td>Desktop App (OpenCV + MediaPipe)</td>
-                                <td>
-                                    Native app with packaged model; consistent
-                                    runtime
-                                </td>
-                                <td>
-                                    Stable FPS, access to GPU/CPU optimizations
-                                </td>
-                                <td>
-                                    Install/IT overhead; updates via installers
-                                </td>
-                                <td>Therapy clinics; managed lab machines</td>
-                            </tr>
-                            <tr>
-                                <td>Edge Device / Kiosk</td>
-                                <td>
-                                    Locked-down mini PC, touch display, external
-                                    webcam
-                                </td>
-                                <td>
-                                    Reliable UX, offline by default, low
-                                    maintenance
-                                </td>
-                                <td>Hardware cost; physical footprint</td>
-                                <td>Libraries, museums, hallways</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-
-            <!-- Accessibility & Privacy -->
-            <section class="mt-5">
-                <h2>Accessibility &amp; Privacy for Children</h2>
+                <h2>Accessibility & Privacy for Children</h2>
                 <div class="row g-3">
                     <div class="col-lg-6">
                         <div class="card h-100">
                             <div class="card-body">
-                                <h6>Inclusive UX (Quick Checklist)</h6>
+                                <h6>Inclusive UX Checklist</h6>
                                 <ul class="checklist">
+                                    <li>Large, high-contrast controls</li>
+                                    <li>Captions + text alternatives</li>
+                                    <li>Icons + short phrases</li>
+                                    <li>Left/right hand toggle</li>
                                     <li>
-                                        Large buttons and high-contrast text
-                                    </li>
-                                    <li>
-                                        Captions and text alternatives for audio
-                                    </li>
-                                    <li>
-                                        Icons + short phrases (minimize reading
-                                        load)
-                                    </li>
-                                    <li>
-                                        Left/right hand support and mirroring
-                                        toggle
-                                    </li>
-                                    <li>
-                                        Clear hand-in-frame guides and lighting
-                                        tips
+                                        Hand-in-frame guides & lighting tips
                                     </li>
                                 </ul>
                                 <div class="image-block">
                                     <img
-                                        src="images/accessibility_ui.png"
-                                        alt="Accessible UI hints"
+                                        src="images/accessibility_ui_gen.png"
+                                        alt="Infographic of large buttons, captions icon, contrast checker, and hand mirroring toggle"
                                     />
                                 </div>
                             </div>
                         </div>
                     </div>
+
                     <div class="col-lg-6">
                         <div class="card h-100">
                             <div class="card-body">
-                                <h6>Data Minimization &amp; Consent</h6>
+                                <h6>Data Minimization & Consent</h6>
                                 <ul class="checklist">
+                                    <li>Process locally; don’t store video</li>
                                     <li>
-                                        Default: process locally; do not store
-                                        video
+                                        If logging, use anonymized landmarks
                                     </li>
-                                    <li>
-                                        If logging, store anonymized landmarks
-                                        only
-                                    </li>
-                                    <li>
-                                        Parental/guardian consent for any data
-                                        collection
-                                    </li>
-                                    <li>
-                                        Provide clear privacy notice in
-                                        child-friendly terms
-                                    </li>
+                                    <li>Guardian consent for any data</li>
+                                    <li>Kid-friendly privacy notice</li>
                                 </ul>
                                 <div class="image-block">
                                     <img
-                                        src="images/privacy_flow.png"
-                                        alt="Privacy flow"
+                                        src="images/privacy_flow_gen.png"
+                                        alt="Flow diagram showing local processing, optional landmarks log, and consent gate"
                                     />
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <p class="small-muted mt-2">
-                    Note: Follow relevant school/district policies and local
-                    regulations when working with minors.
+                <p class="text-muted mt-2">
+                    Follow school/district policies and local regulations when
+                    working with minors.
                 </p>
             </section>
 
-            <!-- Limitations -->
-            <section class="mt-5">
-                <h2>Limitations &amp; Practical Considerations</h2>
-                <ul>
-                    <li>
-                        <strong>Lighting &amp; Backgrounds:</strong> noisy
-                        scenes reduce landmark quality—offer lighting guidance.
-                    </li>
-                    <li>
-                        <strong>Occlusions:</strong> overlapping hands or fast
-                        motion can confuse the model—prompt slower, clearer
-                        motion.
-                    </li>
-                    <li>
-                        <strong>Generalization to Children:</strong> models
-                        trained on adults may underperform—collect
-                        age-appropriate samples or augment sizes.
-                    </li>
-                    <li>
-                        <strong>Cultural/Regional Variants:</strong> sign forms
-                        can vary—allow region selection and notes.
-                    </li>
-                    <li>
-                        <strong>Device Variability:</strong> frame rate and CPU
-                        differ widely—adaptive quality presets help.
-                    </li>
-                </ul>
-            </section>
-
-            <!-- Interactivity: Mini Quiz -->
+            <!-- Mini quiz (unchanged) -->
             <section class="mt-5">
                 <div class="quiz">
                     <h3>Quick Check: Where would you deploy which setup?</h3>
@@ -532,7 +342,7 @@
                             <div>
                                 <label
                                     ><input type="radio" name="q1" /> Desktop
-                                    app (OpenCV + native installer)</label
+                                    app (installer)</label
                                 ><br />
                                 <label
                                     ><input
@@ -554,8 +364,7 @@
                         </li>
                         <li class="mb-3">
                             <strong
-                                >Museum kiosk with unpredictable
-                                connectivity:</strong
+                                >Museum kiosk with spotty connectivity:</strong
                             >
                             <div>
                                 <label
@@ -583,8 +392,7 @@
                         </li>
                         <li class="mb-1">
                             <strong
-                                >Therapy clinic needing fine-grained
-                                control:</strong
+                                >Therapy clinic needing fine control:</strong
                             >
                             <div>
                                 <label
@@ -621,7 +429,6 @@
             </section>
         </div>
 
-        <!-- Footer -->
         <footer class="text-center mt-5 mb-3">
             <p>
                 &copy; 2025 Teaching Children Sign Language Tutorial | Built
@@ -629,23 +436,15 @@
             </p>
         </footer>
 
-        <!-- JS -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
         <script>
             function gradeQuiz() {
                 const a1 = document.getElementById("a1");
                 const a2 = document.getElementById("a2");
                 const a3 = document.getElementById("a3");
-                // Reveal explanations if the correct choice is selected; otherwise still reveal to teach.
-                a1.style.display = document.getElementById("q1-correct").checked
-                    ? "block"
-                    : "block";
-                a2.style.display = document.getElementById("q2-correct").checked
-                    ? "block"
-                    : "block";
-                a3.style.display = document.getElementById("q3-correct").checked
-                    ? "block"
-                    : "block";
+                a1.style.display = "block";
+                a2.style.display = "block";
+                a3.style.display = "block";
             }
         </script>
     </body>

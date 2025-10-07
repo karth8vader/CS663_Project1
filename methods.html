@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <title>Methods | Sign Language Tutorial</title>
+        <title>Research Methods | Sign Language Tutorial</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <!-- Bootstrap -->
         <link
@@ -12,7 +12,7 @@
         <style>
             body {
                 font-family: Arial, sans-serif;
-                line-height: 1.6;
+                line-height: 1.7;
             }
             .navbar {
                 margin-bottom: 20px;
@@ -23,44 +23,38 @@
                 padding: 20px;
             }
             .image-block {
-                margin: 20px 0;
+                margin: 22px 0;
                 text-align: center;
             }
             .image-block img {
                 max-width: 100%;
                 border-radius: 8px;
             }
-            .badge-pill {
-                border-radius: 50px;
-            }
-            pre code {
-                background: #f7f7f7;
-                display: block;
-                padding: 14px;
-                border-radius: 8px;
-                overflow-x: auto;
-            }
-            .callout {
-                background: #eef7ff;
-                border-left: 6px solid #0d6efd;
-                padding: 16px;
-                margin: 20px 0;
-            }
-            .tradeoffs td,
-            .tradeoffs th {
-                vertical-align: top;
-            }
-            .small-muted {
+            .caption {
                 font-size: 0.95rem;
                 color: #666;
+                margin-top: 6px;
             }
-            .copy-btn {
-                position: absolute;
-                right: 16px;
-                top: 12px;
+            blockquote {
+                border-left: 4px solid #0d6efd;
+                padding-left: 12px;
+                color: #333;
+                font-style: italic;
+                background: #f7fbff;
             }
-            .code-wrap {
-                position: relative;
+            .highlight {
+                background: #fff8e1;
+                border-left: 6px solid #ffc107;
+                padding: 14px;
+                border-radius: 8px;
+            }
+            .table th,
+            .table td {
+                vertical-align: top;
+            }
+            .refnote {
+                font-size: 0.9rem;
+                color: #555;
             }
         </style>
     </head>
@@ -71,18 +65,7 @@
                 <a class="navbar-brand" href="index.html"
                     >Sign Language Tutorial</a
                 >
-                <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#nav"
-                    aria-controls="nav"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                >
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="nav">
+                <div class="collapse navbar-collapse">
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="intro.html"
@@ -119,431 +102,209 @@
 
         <!-- Content -->
         <div class="content">
-            <h1 class="text-center">
-                Methods: Computer Vision for Teaching Sign Language
-            </h1>
-            <p class="text-center small-muted">
-                Pipeline overview, key algorithms, code, datasets, evaluation,
-                and limitations.
+            <h1 class="text-center">Research Methods</h1>
+            <p>
+                This tutorial builds upon two complementary research directions:
+                (1) <strong>pedagogical experimentation</strong> in classroom
+                contexts for children learning sign language, and (2)
+                <strong>computer vision model design</strong> for real-time sign
+                recognition.
             </p>
 
-            <!-- Pipeline Overview -->
+            <!-- Pull Quote -->
+            <blockquote>
+                “We used a mixed-methods approach, combining quantitative
+                metrics of performance with qualitative feedback from teachers
+                and students.”
+                <span class="refnote">— Rahman et al., 2024</span>
+            </blockquote>
+
+            <!-- Overview -->
             <section class="mt-4">
-                <h2>1) End-to-End Pipeline</h2>
-                <div class="row">
-                    <div class="col-lg-7">
-                        <ol>
-                            <li>
-                                <strong>Capture:</strong> Webcam streams RGB
-                                frames (typ. 640×480 @ 30 FPS).
-                            </li>
-                            <li>
-                                <strong
-                                    >Hand Detection &amp; Pose
-                                    Estimation:</strong
-                                >
-                                Locate hands and extract 2D landmarks (e.g., 21
-                                points per hand).
-                            </li>
-                            <li>
-                                <strong>Feature Engineering:</strong> Normalize
-                                landmarks (scale/rotate), derive
-                                angles/distances, or use raw coords.
-                            </li>
-                            <li>
-                                <strong>Recognition:</strong>
-                                <ul>
-                                    <li>
-                                        <em>Static signs:</em> feed a single
-                                        frame’s features to a classifier
-                                        (CNN/MLP/SVM).
-                                    </li>
-                                    <li>
-                                        <em>Dynamic signs:</em> feed landmark
-                                        sequences to a temporal model
-                                        (LSTM/GRU/Transformer/TCN).
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <strong>Feedback:</strong> On-screen cues,
-                                correctness score, and playful hints for kids
-                                (emojis/sounds).
-                            </li>
-                            <li>
-                                <strong>Logging &amp; Adaptation:</strong> Track
-                                progress; adapt difficulty (personalized
-                                pacing).
-                            </li>
-                        </ol>
-                    </div>
-                    <div class="col-lg-5">
-                        <div class="image-block">
-                            <img
-                                src="images/cv_pipeline_diagram.png"
-                                alt="CV pipeline"
-                            />
-                            <p class="text-muted">
-                                Figure: Camera → Pose → Features → Classifier →
-                                Child-friendly feedback.
-                            </p>
-                        </div>
+                <h2>1. Research Design Overview</h2>
+
+                <p>
+                    The research combines
+                    <strong>user-centered design</strong> and
+                    <strong>experimental computer vision modeling</strong>. Each
+                    complements the other: Rahman et al. evaluated how children
+                    interacted with digital learning tools across cultural
+                    contexts, while Cabana focused on optimizing AI models for
+                    sign recognition and feedback systems.
+                </p>
+            </section>
+
+            <!-- Child-Centered Research -->
+            <section class="mt-4">
+                <h2>2. Child-Centered Pedagogical Study</h2>
+                <p>
+                    Conducted by Rahman et al. (2024), this phase observed how
+                    children aged 6-7 engaged with an interactive sign-learning
+                    application. The study spanned two countries—India and
+                    Finland—to explore how cultural and instructional contexts
+                    shape learning outcomes.
+                </p>
+
+                <div class="image-block">
+                    <img
+                        src="images/rahman_study_design.jpg"
+                        alt="Classroom setup of Rahman et al. cross-country study"
+                    />
+                    <div class="caption">
+                        Figure 1: Cross-country study setup (Finland vs. India).
+                        Adapted from Rahman et al. (2024).
                     </div>
                 </div>
-                <div class="callout">
-                    <strong>Design for children:</strong> minimize latency
-                    (&lt;100ms), keep UI elements large, provide positive
-                    reinforcement, and avoid complex text.
-                </div>
-            </section>
 
-            <!-- Algorithms -->
-            <section class="mt-4">
-                <h2>2) Core Algorithms</h2>
-
-                <h5 class="mt-3">
-                    <span class="badge bg-primary badge-pill">A</span> Hand Pose
-                    Estimation
-                </h5>
-                <p>
-                    Use a real-time hand detector + landmark regressor (e.g.,
-                    MediaPipe Hands-like pipeline) to obtain 21 keypoints per
-                    hand. Normalize (translate to wrist, scale by palm size,
-                    rotate to a canonical frame) to reduce variation in scale
-                    and camera angle.
-                </p>
-
-                <h5 class="mt-3">
-                    <span class="badge bg-primary badge-pill">B</span> Static
-                    Sign Classification
-                </h5>
-                <p>
-                    For alphabetic/static signs (A, B, C, …), train a classifier
-                    on single-frame features. Options:
-                </p>
-                <ul>
-                    <li>
-                        <strong>MLP/CNN:</strong> Works well on normalized 2D
-                        keypoints or cropped hand images.
-                    </li>
-                    <li>
-                        <strong>Classical baselines:</strong> SVM, Random Forest
-                        on engineered angles/distances for quick baselines.
-                    </li>
-                </ul>
-
-                <h5 class="mt-3">
-                    <span class="badge bg-primary badge-pill">C</span> Dynamic
-                    Sign Recognition
-                </h5>
-                <p>For motion-based signs (e.g., “WHERE”), model sequences:</p>
-                <ul>
-                    <li>
-                        <strong>LSTM/GRU:</strong> straightforward for temporal
-                        dependencies.
-                    </li>
-                    <li>
-                        <strong>Temporal CNN (TCN):</strong> efficient, good
-                        receptive fields.
-                    </li>
-                    <li>
-                        <strong>Transformer:</strong> strong for longer
-                        gestures; needs more data/regularization.
-                    </li>
-                    <li>
-                        <strong>Classical:</strong> HMM/DTW as interpretable
-                        baselines on landmark sequences.
-                    </li>
-                </ul>
-            </section>
-
-            <!-- Trade-offs -->
-            <section class="mt-4">
-                <h2>3) Alternatives &amp; Trade-offs</h2>
-                <div class="table-responsive">
-                    <table class="table table-bordered tradeoffs">
-                        <thead class="table-light">
-                            <tr>
-                                <th>Approach</th>
-                                <th>Pros</th>
-                                <th>Cons</th>
-                                <th>Use When</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Keypoints → MLP/CNN</td>
-                                <td>
-                                    Fast, compact, robust to background; smaller
-                                    models
-                                </td>
-                                <td>
-                                    Depends on landmark quality; may miss finger
-                                    texture cues
-                                </td>
-                                <td>Low-latency, browser/CPU scenarios</td>
-                            </tr>
-                            <tr>
-                                <td>Image crops → CNN</td>
-                                <td>
-                                    Uses rich pixel cues; good for subtle shapes
-                                </td>
-                                <td>
-                                    Heavier inference; sensitive to
-                                    lighting/background
-                                </td>
-                                <td>GPU available; complex hand shapes</td>
-                            </tr>
-                            <tr>
-                                <td>Sequences → LSTM/GRU</td>
-                                <td>Simple, effective temporal modeling</td>
-                                <td>
-                                    May struggle with long-range dependencies
-                                </td>
-                                <td>Short dynamic signs (≤2–3s)</td>
-                            </tr>
-                            <tr>
-                                <td>Sequences → Transformer</td>
-                                <td>
-                                    Great for longer gestures, global context
-                                </td>
-                                <td>Data-hungry; higher latency</td>
-                                <td>
-                                    Richer phrases; adequate data &amp; hardware
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>HMM/DTW baselines</td>
-                                <td>Interpretable; small data friendly</td>
-                                <td>
-                                    Lower ceiling accuracy; feature crafting
-                                </td>
-                                <td>Educational comparison; low-resource</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </section>
-
-            <!-- Code Example -->
-            <section class="mt-4">
-                <h2>
-                    4) Code: Real-Time Hand Tracking &amp; Static Sign
-                    Classification
-                </h2>
-                <p class="small-muted">
-                    Below is a minimal Python example using
-                    <code>mediapipe</code> and <code>opencv-python</code>. It
-                    draws landmarks and (optionally) calls a tiny MLP to
-                    classify a static sign from the 21×(x,y,z) keypoints.
-                    Replace the dummy classifier with your trained model.
-                </p>
-
-                <div class="code-wrap">
-                    <button
-                        class="btn btn-sm btn-outline-secondary copy-btn"
-                        onclick="copyCode()"
+                <blockquote>
+                    “The Finnish children preferred collaborative group work,
+                    while Indian participants engaged longer with guided
+                    modules.”
+                    <span class="refnote"
+                        >— Rahman et al., Design Findings</span
                     >
-                        Copy
-                    </button>
-                    <pre><code id="code-block" class="language-python"># pip install mediapipe opencv-python numpy joblib
-import cv2, numpy as np, joblib
-import mediapipe as mp
+                </blockquote>
 
-# --- Load pose estimator ---
-mp_hands = mp.solutions.hands
-mp_draw  = mp.solutions.drawing_utils
-hands = mp_hands.Hands(static_image_mode=False,
-                       max_num_hands=1,
-                       min_detection_confidence=0.6,
-                       min_tracking_confidence=0.6)
+                <table class="table table-bordered mt-3">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Finland</th>
+                            <th>India</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Participants</td>
+                            <td>14 (ages 6-7)</td>
+                            <td>14 (ages 6-7)</td>
+                        </tr>
+                        <tr>
+                            <td>Preferred Modality</td>
+                            <td>Auditory + Group</td>
+                            <td>Visual + Teacher-guided</td>
+                        </tr>
+                        <tr>
+                            <td>Re-attempt Rate</td>
+                            <td>High (avg. 3.1 attempts)</td>
+                            <td>Moderate (avg. 2.0 attempts)</td>
+                        </tr>
+                        <tr>
+                            <td>Instructor Involvement</td>
+                            <td>Minimal</td>
+                            <td>Moderate to High</td>
+                        </tr>
+                    </tbody>
+                </table>
 
-# --- (Optional) Load a pre-trained classifier on 63-dim features (21 keypoints * x,y,z) ---
-# clf = joblib.load("models/static_sign_mlp.joblib")
-clf = None  # Replace with your model to enable predictions
-
-def landmarks_to_features(lm, img_w, img_h):
-    # Convert normalized [0,1] coords -> pixel, then normalize: translate to wrist, scale by palm size
-    pts = []
-    for i in range(21):
-        x = lm.landmark[i].x * img_w
-        y = lm.landmark[i].y * img_h
-        z = lm.landmark[i].z * max(img_w, img_h)
-        pts.append([x, y, z])
-    pts = np.array(pts, dtype=np.float32)
-
-    wrist = pts[0]
-    pts -= wrist  # translate
-    palm_size = np.linalg.norm(pts[9] - pts[0]) + 1e-6  # wrist to middle MCP as scale
-    pts /= palm_size
-
-    # Optional: rotate to canonical orientation using PCA on (x,y)
-    P = pts[:, :2]
-    P -= P.mean(axis=0)
-    U, S, Vt = np.linalg.svd(P, full_matrices=False)
-    R = Vt  # 2x2
-    P_rot = P @ R.T
-    feats = np.concatenate([P_rot, pts[:, 2:3]], axis=1).reshape(-1)  # 21 * (x', y', z)
-    return feats
-
-cap = cv2.VideoCapture(0)
-label, prob = "", 0.0
-
-while True:
-    ok, frame = cap.read()
-    if not ok: break
-    rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-    res = hands.process(rgb)
-
-    if res.multi_hand_landmarks:
-        for lm in res.multi_hand_landmarks:
-            mp_draw.draw_landmarks(frame, lm, mp_hands.HAND_CONNECTIONS)
-
-            if clf is not None:
-                h, w = frame.shape[:2]
-                feats = landmarks_to_features(lm, w, h)
-                # Example: clf.predict_proba expects shape (1, 63)
-                proba = clf.predict_proba([feats])[0]
-                idx = int(np.argmax(proba))
-                label = f"Class {idx}"
-                prob = float(proba[idx])
-
-    if label:
-        cv2.rectangle(frame, (10,10), (260,60), (0,0,0), -1)
-        txt = f"{label}  {prob:.2f}"
-        cv2.putText(frame, txt, (20,45), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (255,255,255), 2)
-
-    cv2.imshow("Hand Tracking + Static Sign Classification (Press q to quit)", frame)
-    if cv2.waitKey(1) & 0xFF == ord('q'): break
-
-cap.release()
-cv2.destroyAllWindows()</code></pre>
-                </div>
-                <p class="small-muted">
-                    <strong>How it works:</strong> detects a hand, extracts 21
-                    landmarks, normalizes them (translation/scale/rotation), and
-                    feeds them to a classifier. For training, collect labeled
-                    frames of each static sign, compute features as above, then
-                    fit an MLP/SVM. For dynamic signs, aggregate features across
-                    time and train a temporal model (see Section 2C).
-                </p>
-            </section>
-
-            <!-- Hardware -->
-            <section class="mt-4">
-                <h2>5) Hardware &amp; Runtime Considerations</h2>
-                <ul>
-                    <li>
-                        <strong>Webcam:</strong> Standard 720p works; ensure
-                        stable lighting and plain background for kids.
-                    </li>
-                    <li>
-                        <strong>CPU vs GPU:</strong> Keypoint-based models
-                        typically run fine on CPU; image-based CNNs benefit from
-                        GPU.
-                    </li>
-                    <li>
-                        <strong>Mobile/Browser:</strong> Consider WebGL/WebGPU
-                        or TF.js if deploying in-browser; prioritize
-                        low-latency.
-                    </li>
-                    <li>
-                        <strong>Edge cases:</strong> small hands, fast motion,
-                        occlusions (two hands overlapping), left/right
-                        mirroring.
-                    </li>
-                </ul>
-            </section>
-
-            <!-- Data -->
-            <section class="mt-4">
-                <h2>6) Datasets &amp; Labeling</h2>
                 <p>
-                    For child-centric tools, you may need to curate a small,
-                    focused dataset:
+                    The mixed-methods design combined quantitative logs
+                    (accuracy, attempts, time-on-task) with qualitative
+                    classroom notes. Analysis emphasized engagement patterns and
+                    preferred learning modalities.
                 </p>
-                <ul>
-                    <li>
-                        <strong>Static signs:</strong> capture 100–300 frames
-                        per class across varied lighting and hand sizes.
-                    </li>
-                    <li>
-                        <strong>Dynamic signs:</strong> record short clips
-                        (1–3s); store landmark sequences to reduce storage.
-                    </li>
-                    <li>
-                        <strong>Augmentation:</strong> brightness/contrast
-                        jitter, slight rotation/scale, temporal jitter for
-                        sequences.
-                    </li>
-                    <li>
-                        <strong>Ethics/Consent:</strong> obtain consent for any
-                        child data; anonymize faces; follow IRB/school policies
-                        where applicable.
-                    </li>
-                </ul>
             </section>
 
-            <!-- Evaluation -->
+            <!-- Computer Vision Methods -->
             <section class="mt-4">
-                <h2>7) Evaluation Metrics</h2>
-                <ul>
-                    <li>
-                        <strong>Accuracy / F1-score:</strong> per-class and
-                        macro averages.
-                    </li>
-                    <li>
-                        <strong>Latency:</strong> end-to-end ms/frame; target
-                        &lt;100ms for smooth feedback.
-                    </li>
-                    <li>
-                        <strong>Robustness:</strong> test across lighting,
-                        backgrounds, skin tones, hand sizes (child variance).
-                    </li>
-                    <li>
-                        <strong>UX metrics:</strong> time-to-correct-gesture,
-                        child engagement (task completion, smile/affect if
-                        appropriate), and caregiver/teacher feedback.
-                    </li>
-                </ul>
-            </section>
-
-            <!-- Limitations -->
-            <section class="mt-4">
-                <h2>8) Limitations &amp; Mitigations</h2>
-                <ul>
-                    <li>
-                        <strong>Occlusions:</strong> ask learner to keep hands
-                        apart; show on-screen hand position guides.
-                    </li>
-                    <li>
-                        <strong>Lighting sensitivity:</strong> auto-exposure can
-                        jitter; add exposure lock or guidance.
-                    </li>
-                    <li>
-                        <strong>Generalization:</strong> models trained on
-                        adults may underperform on children’s hands—collect
-                        child data or augment sizes.
-                    </li>
-                    <li>
-                        <strong>Dynamic signs complexity:</strong> require
-                        temporal models and more data; scaffold curriculum
-                        (start with static alphabet).
-                    </li>
-                </ul>
-            </section>
-
-            <!-- Image slot -->
-            <div class="image-block">
-                <img
-                    src="images/cnn_architecture.png"
-                    alt="CNN diagram for static sign classification"
-                />
-                <p class="text-muted">
-                    Figure: Example CNN/MLP head for classifying normalized
-                    keypoints or cropped hand images.
+                <h2>3. Computer Vision System Development</h2>
+                <p>
+                    The second stream, described in Cabana (2024), addressed
+                    model training for real-time sign recognition. The study
+                    used an image dataset of ASL alphabet gestures (excluding J
+                    and Z) to evaluate multiple convolutional architectures.
                 </p>
-            </div>
+
+                <div class="image-block">
+                    <img
+                        src="images/cabana_fig2_pipeline.png"
+                        alt="Computer vision sign recognition pipeline"
+                    />
+                    <div class="caption">
+                        Figure 2: End-to-end sign recognition system (camera →
+                        CNN → label overlay). Adapted from Cabana (2024).
+                    </div>
+                </div>
+
+                <blockquote>
+                    “We benchmarked six CNN families and selected the one
+                    providing the best trade-off between accuracy and
+                    computational cost.”
+                    <span class="refnote">— Cabana, 2024</span>
+                </blockquote>
+
+                <table class="table table-bordered mt-3">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Model Family</th>
+                            <th>Avg. Accuracy (%)</th>
+                            <th>Latency (ms/frame)</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>VGG16</td>
+                            <td>91.8</td>
+                            <td>38</td>
+                            <td>High accuracy; large size</td>
+                        </tr>
+                        <tr>
+                            <td>ResNet50</td>
+                            <td>93.2</td>
+                            <td>42</td>
+                            <td>Best balance for inference speed</td>
+                        </tr>
+                        <tr>
+                            <td>InceptionV3</td>
+                            <td>89.7</td>
+                            <td>35</td>
+                            <td>Fast, but lower accuracy</td>
+                        </tr>
+                        <tr>
+                            <td>MobileNet</td>
+                            <td>90.4</td>
+                            <td>21</td>
+                            <td>Lightweight, best for edge devices</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>
+                    Each model was trained on augmented datasets to ensure
+                    robustness to lighting and skin tone variation. Evaluation
+                    used standard classification metrics and confusion matrices.
+                </p>
+
+                <div class="image-block">
+                    <img
+                        src="images/cabana_model_families.png"
+                        alt="Bar chart comparing CNN models by accuracy"
+                    />
+                    <div class="caption">
+                        Figure 3: Comparative model accuracy (Cabana, 2024).
+                    </div>
+                </div>
+            </section>
+
+            <!-- Synthesis -->
+            <section class="mt-4">
+                <h2>4. Integrated Research Methodology</h2>
+                <p>
+                    The final phase integrates both studies: the
+                    <strong>child engagement results</strong> inform the
+                    <strong>design of the CV learning interface</strong>. The
+                    goal is to create adaptive feedback systems grounded in real
+                    behavioral data.
+                </p>
+
+                <div class="highlight">
+                    <strong>Methodological Takeaway:</strong>
+                    Empirical UX research (Rahman) + empirical ML benchmarking
+                    (Cabana) ⇒ a replicable blueprint for human-centered,
+                    AI-assisted learning.
+                </div>
+            </section>
         </div>
 
         <!-- Footer -->
@@ -554,22 +315,7 @@ cv2.destroyAllWindows()</code></pre>
             </p>
         </footer>
 
-        <!-- JS -->
+        <!-- Bootstrap JS -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-        <script>
-            function copyCode() {
-                const el = document.getElementById("code-block");
-                const range = document.createRange();
-                range.selectNode(el);
-                const sel = window.getSelection();
-                sel.removeAllRanges();
-                sel.addRange(range);
-                try {
-                    document.execCommand("copy");
-                } catch (e) {}
-                sel.removeAllRanges();
-                alert("Code copied to clipboard!");
-            }
-        </script>
     </body>
 </html>

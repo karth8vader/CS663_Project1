@@ -4,7 +4,6 @@
         <meta charset="UTF-8" />
         <title>References | Sign Language Tutorial</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <!-- Bootstrap -->
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
             rel="stylesheet"
@@ -22,16 +21,17 @@
                 margin: auto;
                 padding: 20px;
             }
-            .ref-list li {
+            .ref-list li,
+            .image-attrib li {
                 margin-bottom: 1rem;
             }
-            .image-attrib li {
+            .caption {
+                color: #666;
                 font-size: 0.95rem;
             }
         </style>
     </head>
     <body>
-        <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.html"
@@ -70,16 +70,12 @@
             </div>
         </nav>
 
-        <!-- Page Content -->
         <div class="content">
             <h1 class="text-center">References</h1>
-            <p class="text-center text-muted">
-                Sources cited in this tutorial.
-            </p>
 
-            <!-- Bibliography -->
+            <!-- Academic References -->
             <section class="mt-4">
-                <h3>Academic & Technical References</h3>
+                <h3>Academic & Technical Sources</h3>
                 <ol class="ref-list">
                     <li>
                         Rahman, Sama, et al.
@@ -88,60 +84,128 @@
                             Elementary Schoolchildren – A Cross-Country
                             Study.</em
                         >
-                        ACM, 13 Nov. 2024, pp. 222–232.
+                        ACM, 13 Nov. 2024, pp. 222–232. DOI:
                         <a
                             href="https://doi.org/10.1145/3696593.3696602"
                             target="_blank"
-                            >https://doi.org/10.1145/3696593.3696602</a
+                            >10.1145/3696593.3696602</a
                         >
+                        <span class="caption">(CC BY 4.0 License)</span>
                     </li>
                     <li>
-                        “A Real-Time Artificial Intelligence System for Learning
-                        Sign Language.”
-                        <em>arXiv</em>, 2024.
+                        Cabana, J.
+                        <em
+                            >A Real-Time Artificial Intelligence System for
+                            Learning Sign Language.</em
+                        >
+                        <em>arXiv preprint</em> arXiv:2404.07211, 2024.
                         <a
                             href="https://arxiv.org/html/2404.07211v1"
                             target="_blank"
                             >https://arxiv.org/html/2404.07211v1</a
                         >
+                        <span class="caption">(CC BY-NC-SA 4.0 License)</span>
                     </li>
                 </ol>
             </section>
 
-            <!-- Image Attributions -->
+            <!-- Image & Media Attributions -->
             <section class="mt-5">
-                <h3>Image Attributions</h3>
+                <h3>Image and Media Attributions</h3>
                 <ul class="image-attrib">
+                    <!-- Homepage / Intro -->
                     <li>
-                        Figure 1 (child learning illustration): stock
-                        illustration from [Insert Source / License Here].
+                        <strong>Homepage Illustration:</strong> AI-generated
+                        using OpenAI DALL·E (prompt: “child learning sign
+                        language via laptop with hand tracking”).
+                        <em
+                            >© 2025 Karthikeyan Vijayaraj. Generated image used
+                            under academic fair use.</em
+                        >
+                    </li>
+
+                    <li>
+                        <strong>Introduction Photo:</strong> AI-generated using
+                        OpenAI DALL·E (prompt: “realistic photo of diverse
+                        classroom learning sign language”).
+                    </li>
+
+                    <!-- Background Page -->
+                    <li>
+                        <strong>Figures A–D (Rahman et al.):</strong> Adapted
+                        from original figures (Figs. 8–9, Table 2) in Rahman et
+                        al., 2024. Reused under <em>CC BY 4.0</em> License with
+                        attribution.
+                    </li>
+
+                    <li>
+                        <strong>Figures E–F (Cabana):</strong> Adapted from
+                        Cabana et al., 2024 (Figs. 1–2, CNN comparison table).
+                        Reused under <em>CC BY-NC-SA 4.0</em> License with
+                        attribution.
+                    </li>
+
+                    <!-- Methods Page -->
+                    <li>
+                        <strong>CV Pipeline Diagram:</strong> Adapted schematic
+                        based on Cabana (2024, Fig. 2) with visual re-drawing
+                        for clarity; reused under <em>CC BY-NC-SA 4.0</em>.
                     </li>
                     <li>
-                        Figure 2 (children signing in class): educational photo
-                        from [Insert Source / License Here].
+                        <strong>Model Comparison Chart:</strong> Recreated from
+                        reported metrics in Cabana (2024, Section 4). Graph
+                        redrawn using original data summary.
+                    </li>
+
+                    <!-- Applications Page -->
+                    <li>
+                        <strong>Applications Hero Image:</strong> AI-generated,
+                        depicting children using sign-language learning software
+                        in a classroom.
                     </li>
                     <li>
-                        Pipeline diagram: adapted from MediaPipe Hands
-                        documentation, Google Research.
+                        <strong
+                            >Classroom Station, Home Learning, Therapy Session,
+                            Public Kiosk:</strong
+                        >
+                        All AI-generated with OpenAI DALL·E to visualize
+                        deployment contexts. No identifiable real individuals. ©
+                        2025 Karthikeyan Vijayaraj.
                     </li>
                     <li>
-                        CNN architecture diagram: adapted from deep learning
-                        lecture slides [Insert Source].
+                        <strong>Curriculum Map Infographic:</strong>
+                        AI-generated educational 4-step visual (Alphabet →
+                        Vocabulary → Phrases → Conversation).
                     </li>
                     <li>
-                        Quiz images (A, Hello, 5): adapted from ASL learning
-                        resources [Insert Source / License Here].
+                        <strong>Feedback UI Mockup:</strong> AI-generated
+                        conceptual interface (webcam + overlay + confidence
+                        meter).
                     </li>
+                    <li>
+                        <strong>Accessibility Tiles Infographic:</strong>
+                        AI-generated vector-style diagram showing large buttons,
+                        captions, and color contrast features.
+                    </li>
+                    <li>
+                        <strong>Privacy Flow Diagram:</strong> AI-generated
+                        schematic summarizing local processing → consent →
+                        dashboard; derived from ethical design notes.
+                    </li>
+
+                    
                 </ul>
-                <p class="small text-muted mt-2">
-                    * All images are used under educational fair use or
-                    open-license terms. Please replace placeholder sources above
-                    with actual attributions for your chosen media.
+
+                <p class="small text-muted mt-3">
+                    * All AI-generated images were created by the tutorial
+                    author exclusively for this educational project using OpenAI
+                    DALL·E and are used under fair academic use. Adapted figures
+                    from Rahman et al. (2024) and Cabana (2024) are reused with
+                    proper attribution under their respective Creative Commons
+                    licenses.
                 </p>
             </section>
-        </div>
 
-        <!-- Footer -->
         <footer class="text-center mt-5 mb-3">
             <p>
                 &copy; 2025 Teaching Children Sign Language Tutorial | Built
@@ -149,7 +213,6 @@
             </p>
         </footer>
 
-        <!-- Bootstrap JS -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
